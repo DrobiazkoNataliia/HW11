@@ -10,7 +10,7 @@ public class Stream2 {
 
                  Arrays.stream(array)
                 .map(s -> s.toUpperCase())
-                .sorted()
+                .sorted((o1, o2) -> -o1.compareTo(o2))
                 .forEach(System.out::println);
     }
 }
