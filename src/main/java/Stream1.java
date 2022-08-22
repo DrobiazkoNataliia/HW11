@@ -6,10 +6,11 @@ public class Stream1 {
 
         String[] array = {"John", "Bill", "Max", "Alex", "Anne", "Chris", "Dean", "Eve", "Fred", "George"};
 
-        IntStream.range(0, array.length)
+        System.out.println(IntStream.range(0, array.length)
                 .filter(index -> index % 2 != 0)
                 .mapToObj(index -> String.format("%d. %s", index, array[index]))
-                .forEach(System.out::println);
+                .collect(Collectors.joining(", "))
+        );
     }
 }
 
